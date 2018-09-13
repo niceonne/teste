@@ -256,9 +256,7 @@ namespace LocalBitcoins
         /// <param name="overrideBaseAddress">Override API base address. Default is "https://localbitcoins.net/"</param>
         public LocalBitcoinsAPI(string accessKey, string secretKey, int apiTimeoutSec = DefaultApiTimeoutSec, string overrideBaseAddress = null )
         {
-            ////string ApiKey = "212809b472faa082fcad7296d9ab5f25";
             //string ApiKey = ConfigurationManager.AppSettings["ApiKey"];
-            ////string APiSecret = "57d098e7224ecf154095c59d382ccb53de6cb3d2b86f99fa5e17deb5ffb4c1c1";
             //string APiSecret = ConfigurationManager.AppSettings["APiSecret"];
 
             if (overrideBaseAddress == null)
