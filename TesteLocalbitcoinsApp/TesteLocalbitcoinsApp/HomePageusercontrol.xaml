@@ -1,0 +1,219 @@
+﻿<UserControl x:Class="TesteLocalbitcoinsApp.HomePageusercontrol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TesteLocalbitcoinsApp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Loaded="StackPanel_Loaded" Visibility="Collapsed">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <TextBox x:Name="TextBoxHomeNewTrade" Margin="10, 40, 10, 5" Width="200" Height="25">
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="4"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Button x:Name="ButtonHomeViewTrade" Click="ButtonHomeViewTrade_Click" Height="26" Width="100" Margin="0, 40, 10, 5" Content="View / Message" BorderThickness="1" BorderBrush="#ccc" Background="#fff">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="4"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+            <Label FontSize="27" Content="Your open trades" FontWeight="Medium" Margin="10, 5"/>
+            <TextBlock Text="Your total amount of bitcoins under escrow is 0.06020024 BTC." Margin="15, 0"/>
+            <Label Content="Selling bitcoins" FontSize="17" FontWeight="Medium" Margin="10, 5"/>
+            <DataGrid Margin="15, 5" x:Name="myDataGrid" CanUserAddRows="True" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="contactidColumn" Binding="{Binding ContactNumber}" Header="#" Width="75" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="tradecreatedatColumn" Binding="{Binding CreatedAt}" Header="Created at" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="usernameColumn" Binding="{Binding Nickname}" Header="Buyer" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="amountBTCColumn" Binding="{Binding AmountBtc}" Header="Amount (BTC)" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="amountColumn" Binding="{Binding Amount}" Header="Amount (fiat)" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="paymentmethodColumn" Binding="{Binding PaymentMethod}" Header="Payment Method" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="tradestatusColumn" Binding="{Binding Status}" Header="Status" Width="100" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel>
+            <Border BorderThickness="1" Margin="10" BorderBrush="DimGray">
+                <ScrollViewer>
+                    <StackPanel>
+                        <Label Content="Notifications keys" FontSize="16"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="Notifications reading keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="Account new info keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="Messages keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="Chat Messages keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="RealName api keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="Verifying User api keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <Label Content="Release Bitcoins keys" FontSize="16" Margin="0, 20, 0, 0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Apikey" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="19,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="ApiSecret" VerticalAlignment="Center" Margin="5,5,0,5"/>
+                            <TextBox TextWrapping="Wrap" Width="350" Height="23" HorizontalAlignment="Left" Margin="5,5,0,5">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="2.5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

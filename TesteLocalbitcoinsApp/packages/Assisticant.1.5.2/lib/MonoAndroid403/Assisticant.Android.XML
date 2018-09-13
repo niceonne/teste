@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assisticant.Android</name>
+    </assembly>
+    <members>
+        <member name="T:Assisticant.Binding.BindingManagerExtensions">
+            <summary>
+            Binding manager extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.BindingManagerExtensions.Initialize(Assisticant.Binding.BindingManager,Android.App.Activity)">
+            <summary>
+            Initialize the binding manager for an activity.
+            </summary>
+            <param name="bindings">The binding manager for the activity.</param>
+            <param name="activity">The activity that owns the binding manager.</param>
+        </member>
+        <member name="T:Assisticant.Binding.ButtonBindingExtensions">
+            <summary>
+            Button binding extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.ButtonBindingExtensions.BindCommand(Assisticant.Binding.BindingManager,Android.Widget.Button,System.Action)">
+            <summary>
+            Bind a button's command to an action.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The button.</param>
+            <param name="action">The action to perform when the button is tapped.</param>
+        </member>
+        <member name="M:Assisticant.Binding.ButtonBindingExtensions.BindCommand(Assisticant.Binding.BindingManager,Android.Widget.Button,System.Action,System.Func{System.Boolean})">
+            <summary>
+            Bind a button's command and Enabled property to an action and a condition.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The button.</param>
+            <param name="action">The ation to perform when the button is tapped.</param>
+            <param name="condition">The condition that controls when the button is enabled.</param>
+        </member>
+        <member name="T:Assisticant.Binding.ListViewBindingExtensions">
+            <summary>
+            ListViewExtensions
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.ListViewBindingExtensions.BindItems``1(Assisticant.Binding.BindingManager,Android.Widget.ListView,System.Func{System.Collections.Generic.IEnumerable{``0}},System.Int32,System.Action{Android.Views.View,``0,Assisticant.Binding.BindingManager})">
+            <summary>
+            Bind the items of a ListView to a collection.
+            </summary>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The ListView to bind.</param>
+            <param name="output">The collection to which to bind.</param>
+            <param name="layoutId">The ID of the layout resource to use for the items of the ListView.</param>
+            <param name="bind">The delegate that binds each item of the collection.</param>
+        </member>
+        <member name="M:Assisticant.Binding.ListViewBindingExtensions.BindItems``1(Assisticant.Binding.BindingManager,Android.Widget.ListView,System.Func{System.Collections.Generic.IEnumerable{``0}},System.Int32,System.Func{``0},System.Action{``0},System.Action{Android.Views.View,``0,Assisticant.Binding.BindingManager})">
+            <summary>
+            Bind the items of a ListView to a collection.
+            </summary>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The ListView to bind.</param>
+            <param name="output">The collection to which to bind.</param>
+            <param name="layoutId">The ID of the layout resource to use for the items of the ListView.</param>
+            <param name="selection">Get the current selection.</param>
+            <param name="selected">Set the current selection.</param>
+            <param name="bind">The delegate that binds each item of the collection.</param>
+        </member>
+        <member name="T:Assisticant.Binding.NumberPickerBindingExtensions">
+            <summary>
+            Number picker binding extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.NumberPickerBindingExtensions.BindValue``1(Assisticant.Binding.BindingManager,Android.Widget.NumberPicker,System.Func{``0},System.Action{``0},Assisticant.Binding.IDisplayDataConverter{System.Int32,``0})">
+            <summary>
+            Bind the value of a number picker to a property using a value converter.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The number picker.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">An action sets the property.</param>
+            <param name="converter">A custom value converter to type double.</param>
+            <typeparam name="TData">The type of property to which the value is bound.</typeparam>
+        </member>
+        <member name="M:Assisticant.Binding.NumberPickerBindingExtensions.BindValue(Assisticant.Binding.BindingManager,Android.Widget.NumberPicker,System.Func{System.Int32},System.Action{System.Int32})">
+            <summary>
+            Bind the value of a number picker to an integer property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The number picker.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">An action sets the property.</param>
+        </member>
+        <member name="T:Assisticant.Binding.TextBindingExtensions">
+            <summary>
+            Text binding extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText``1(Assisticant.Binding.BindingManager,Android.Widget.TextView,System.Func{``0},System.Action{``0},Assisticant.Binding.IDisplayDataConverter{System.String,``0})">
+            <summary>
+            Bind the text of a text view to a property using a value converter.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The text field.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">A function that sets the property.</param>
+            <param name="converter">A custom value converter to string.</param>
+            <typeparam name="TData">The type of the property.</typeparam>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText``1(Assisticant.Binding.BindingManager,Android.Widget.TextView,System.Func{``0},Assisticant.Binding.IDisplayDataConverter{System.String,``0})">
+            <summary>
+            Bind the text of a text view to a read-only property using a value converter.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The label.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="converter">A custom value converter to string.</param>
+            <typeparam name="TData">The type of the property.</typeparam>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,Android.Widget.TextView,System.Func{System.String},System.Action{System.String})">
+            <summary>
+            Bind the text of a text view to a string property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The text field.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">A function that sets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,Android.Widget.TextView,System.Func{System.String})">
+            <summary>
+            Bind the text of a text view to a read-only string property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The label.</param>
+            <param name="output">A function that gets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,Android.Widget.TextView,System.Func{System.Int32},System.Action{System.Int32})">
+            <summary>
+            Bind the text of a text view to an int property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The text field.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">A function that sets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,Android.Widget.TextView,System.Func{System.Int32})">
+            <summary>
+            Bind the text of a text view to a read-only int property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The label.</param>
+            <param name="output">A function that gets the property.</param>
+        </member>
+    </members>
+</doc>

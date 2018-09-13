@@ -1,0 +1,74 @@
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\MainWindow.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerCogs.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerDotCircle.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerPiston.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerSwirl.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucTail.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\MainWindow.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerCogs.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerDotCircle.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerPiston.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerSwirl.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucTail.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\App.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF_MarkupCompile.cache
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\bin\Debug\xamlSpinnersWPF.exe
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\bin\Debug\xamlSpinnersWPF.pdb
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerApple.baml
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\ucSpinnerApple.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.g.resources
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.exe
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.pdb
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\felix\Documents\Expression\Blend 4\Projects\xamlSpinnersWPF\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF_MarkupCompile.lref
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\bin\Debug\xamlSpinnersWPF.exe
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\bin\Debug\xamlSpinnersWPF.pdb
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.csprojAssemblyReference.cache
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerApple.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerCogs.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerDotCircle.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerPiston.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerSwirl.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucTail.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\MainWindow.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerApple.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerCogs.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerDotCircle.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerPiston.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucSpinnerSwirl.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\ucTail.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\App.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF_MarkupCompile.cache
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF_MarkupCompile.lref
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\MainWindow.baml
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.g.resources
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.csproj.CoreCompileInputs.cache
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.exe
+F:\Downloads\Xaml-Spinners-WPF-master\Xaml-Spinners-WPF-master\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.pdb
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\bin\Debug\xamlSpinnersWPF.exe
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\bin\Debug\xamlSpinnersWPF.pdb
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.csprojAssemblyReference.cache
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerApple.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerCogs.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerDotCircle.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerPiston.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerSwirl.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucTail.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\MainWindow.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerApple.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerCogs.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerDotCircle.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerPiston.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucSpinnerSwirl.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\ucTail.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\App.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF_MarkupCompile.cache
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF_MarkupCompile.lref
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\MainWindow.baml
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.g.resources
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.csproj.CoreCompileInputs.cache
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.exe
+C:\Users\migue\source\repos\TesteLocalbitcoinsApp\xamlSpinnersWPF\obj\Debug\xamlSpinnersWPF.pdb

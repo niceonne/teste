@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalBitcoinsDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Username">
+    <Key>
+      <PropertyRef Name="UsernameKey" />
+    </Key>
+    <Property Name="UsernameKey" Type="Int32" Nullable="false" />
+    <Property Name="Username1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="UsernameInfo" Relationship="Self.FK_Username_UsernameInfo" FromRole="Username" ToRole="UsernameInfo" />
+    <NavigationProperty Name="UsernameTrades" Relationship="Self.FK_UsernameTrades_UsernameTrades" FromRole="Username" ToRole="UsernameTrades" />
+  </EntityType>
+  <EntityType Name="UsernameInfo">
+    <Key>
+      <PropertyRef Name="UsernameKey" />
+    </Key>
+    <Property Name="UsernameKey" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Verified" Type="Boolean" Nullable="false" />
+    <Property Name="Verification_date" Type="DateTime" Precision="3" />
+    <Property Name="Total_Bought" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Total_Sold" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Number_complete_trades" Type="Int32" Nullable="false" />
+    <Property Name="AccountCreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="RealName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Username" Relationship="Self.FK_Username_UsernameInfo" FromRole="UsernameInfo" ToRole="Username" />
+    <Property Name="FeedBackExists" Type="Boolean" />
+    <Property Name="myFeedBackMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="feedbacktype" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UsernameTrade">
+    <Key>
+      <PropertyRef Name="Contact_number" />
+    </Key>
+    <Property Name="UsernameKey" Type="Int32" Nullable="false" />
+    <Property Name="Trade_amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Contact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email_used" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Trade_Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Username" Relationship="Self.FK_UsernameTrades_UsernameTrades" FromRole="UsernameTrades" ToRole="Username" />
+    <Property Name="CardUsed" Type="Boolean" />
+    <Property Name="C4digitscard" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Username_UsernameInfo">
+    <End Role="UsernameInfo" Type="Self.UsernameInfo" Multiplicity="1" />
+    <End Role="Username" Type="Self.Username" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UsernameInfo">
+        <PropertyRef Name="UsernameKey" />
+      </Principal>
+      <Dependent Role="Username">
+        <PropertyRef Name="UsernameKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsernameTrades_UsernameTrades">
+    <End Role="Username" Type="Self.Username" Multiplicity="1" />
+    <End Role="UsernameTrades" Type="Self.UsernameTrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Username">
+        <PropertyRef Name="UsernameKey" />
+      </Principal>
+      <Dependent Role="UsernameTrades">
+        <PropertyRef Name="UsernameKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LocalBitcoinsDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Usernames" EntityType="Self.Username" />
+    <EntitySet Name="UsernameInfoes" EntityType="Self.UsernameInfo" />
+    <EntitySet Name="UsernameTrades" EntityType="Self.UsernameTrade" />
+    <AssociationSet Name="FK_Username_UsernameInfo" Association="Self.FK_Username_UsernameInfo">
+      <End Role="UsernameInfo" EntitySet="UsernameInfoes" />
+      <End Role="Username" EntitySet="Usernames" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsernameTrades_UsernameTrades" Association="Self.FK_UsernameTrades_UsernameTrades">
+      <End Role="Username" EntitySet="Usernames" />
+      <End Role="UsernameTrades" EntitySet="UsernameTrades" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LocalBitcoinsDatabaseModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LocalBitcoinsDatabaseModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

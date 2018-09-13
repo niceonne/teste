@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assisticant.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:Assisticant.Binding.BindingManagerExtensions">
+            <summary>
+            Binding manager extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.BindingManagerExtensions.Initialize(Assisticant.Binding.BindingManager,UIKit.UIViewController)">
+            <summary>
+            Initialize the binding manager for a view controller.
+            </summary>
+            <param name="bindings">The binding manager for this view.</param>
+            <param name="controller">The view controller for this view.</param>
+        </member>
+        <member name="T:Assisticant.Binding.ButtonBindingExtensions">
+            <summary>
+            Button binding extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.ButtonBindingExtensions.BindCommand(Assisticant.Binding.BindingManager,UIKit.UIButton,System.Action)">
+            <summary>
+            Bind a button's command to an action.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The button.</param>
+            <param name="action">The action to perform when the button is tapped.</param>
+        </member>
+        <member name="M:Assisticant.Binding.ButtonBindingExtensions.BindCommand(Assisticant.Binding.BindingManager,UIKit.UIButton,System.Action,System.Func{System.Boolean})">
+            <summary>
+            Bind a button's command and Enabled property to an action and a condition.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The button.</param>
+            <param name="action">The ation to perform when the button is tapped.</param>
+            <param name="condition">The condition that controls when the button is enabled.</param>
+        </member>
+        <member name="T:Assisticant.Binding.StepperBindingExtensions">
+            <summary>
+            Stepper binding extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.StepperBindingExtensions.BindValue``1(Assisticant.Binding.BindingManager,UIKit.UIStepper,System.Func{``0},System.Action{``0},Assisticant.Binding.IDisplayDataConverter{System.Double,``0})">
+            <summary>
+            Bind the Value property of a UIStepper to a property using a value converter.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The stepper.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">An action sets the property.</param>
+            <param name="converter">A custom value converter to type double.</param>
+            <typeparam name="TData">The type of property to which the value is bound.</typeparam>
+        </member>
+        <member name="M:Assisticant.Binding.StepperBindingExtensions.BindValue(Assisticant.Binding.BindingManager,UIKit.UIStepper,System.Func{System.Double},System.Action{System.Double})">
+            <summary>
+            Bind the Value property of a UIStepper to a double property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The stepper.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">An action sets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.StepperBindingExtensions.BindValue(Assisticant.Binding.BindingManager,UIKit.UIStepper,System.Func{System.Int32},System.Action{System.Int32})">
+            <summary>
+            Bind the Value property of a UIStepper to an integer property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The stepper.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">An action sets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TableViewBindingExtensions.BindItems``1(Assisticant.Binding.BindingManager,UIKit.UITableView,System.Func{System.Collections.Generic.IEnumerable{``0}},System.Action{UIKit.UITableViewCell,``0,Assisticant.Binding.BindingManager})">
+            <summary>
+            Bind the items of a UICollectionView to a collection.
+            </summary>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The ListView to bind.</param>
+            <param name="output">The collection to which to bind.</param>
+            <param name="bind">The delegate that binds each item of the collection.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TableViewBindingExtensions.BindItems``1(Assisticant.Binding.BindingManager,UIKit.UITableView,System.Func{System.Collections.Generic.IEnumerable{``0}},System.Func{``0},System.Action{``0},System.Action{UIKit.UITableViewCell,``0,Assisticant.Binding.BindingManager})">
+            <summary>
+            Bind the items of a UICollectionView to a collection.
+            </summary>
+            <typeparam name="T">The type of item in the collection.</typeparam>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The ListView to bind.</param>
+            <param name="output">The collection to which to bind.</param>
+            <param name="selection">Get current selection.</param>
+            <param name="selected">Set the current selection.</param>
+            <param name="bind">The delegate that binds each item of the collection.</param>
+        </member>
+        <member name="T:Assisticant.Binding.TextBindingExtensions">
+            <summary>
+            Text binding extensions.
+            </summary>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText``1(Assisticant.Binding.BindingManager,UIKit.UITextField,System.Func{``0},System.Action{``0},Assisticant.Binding.IDisplayDataConverter{System.String,``0})">
+            <summary>
+            Bind the Text of a UITextField to a property using a value converter.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The text field.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">A function that sets the property.</param>
+            <param name="converter">A custom value converter to string.</param>
+            <typeparam name="TData">The type of the property.</typeparam>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText``1(Assisticant.Binding.BindingManager,UIKit.UILabel,System.Func{``0},Assisticant.Binding.IDisplayDataConverter{System.String,``0})">
+            <summary>
+            Bind the Text of a UILabel to a read-only property using a value converter.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The label.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="converter">A custom value converter to string.</param>
+            <typeparam name="TData">The type of the property.</typeparam>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,UIKit.UITextField,System.Func{System.String},System.Action{System.String})">
+            <summary>
+            Bind the Text of a UITextField to a string property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The text field.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">A function that sets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,UIKit.UILabel,System.Func{System.String})">
+            <summary>
+            Bind the Text of a UILabel to a read-only string property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The label.</param>
+            <param name="output">A function that gets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,UIKit.UITextField,System.Func{System.Int32},System.Action{System.Int32})">
+            <summary>
+            Bind the Text of a UITextField to an int property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The text field.</param>
+            <param name="output">A function that gets the property.</param>
+            <param name="input">A function that sets the property.</param>
+        </member>
+        <member name="M:Assisticant.Binding.TextBindingExtensions.BindText(Assisticant.Binding.BindingManager,UIKit.UILabel,System.Func{System.Int32})">
+            <summary>
+            Bind the Text of a UILabel to a read-only int property.
+            </summary>
+            <param name="bindings">The binding manager.</param>
+            <param name="control">The label.</param>
+            <param name="output">A function that gets the property.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalBitcoinsDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LocalBitcoinsDatabase" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(LocalBitcoinsDatabaseModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(LocalBitcoinsDatabaseModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="sysdiagrams" EntityType="LocalBitcoinsDatabaseModel.sysdiagram" />
+    <EntitySet Name="Usernames" EntityType="LocalBitcoinsDatabaseModel.Username" />
+    <EntitySet Name="UsernameInfoes" EntityType="LocalBitcoinsDatabaseModel.UsernameInfo" />
+    <EntitySet Name="UsernameTrades" EntityType="LocalBitcoinsDatabaseModel.UsernameTrade" />
+    <AssociationSet Name="FK_Username_UsernameInfo" Association="LocalBitcoinsDatabaseModel.FK_Username_UsernameInfo">
+      <End Role="UsernameInfo" EntitySet="UsernameInfoes" />
+      <End Role="Username" EntitySet="Usernames" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsernameTrades_UsernameTrades" Association="LocalBitcoinsDatabaseModel.FK_UsernameTrades_UsernameTrades">
+      <End Role="Username" EntitySet="Usernames" />
+      <End Role="UsernameTrade" EntitySet="UsernameTrades" />
+    </AssociationSet>
+    <EntitySet Name="spt_fallback_usg" EntityType="LocalBitcoinsDatabaseModel.spt_fallback_usg" />
+    <EntitySet Name="spt_monitor" EntityType="LocalBitcoinsDatabaseModel.spt_monitor" />
+    <FunctionImport Name="sp_MScleanupmergepublisher" />
+    <FunctionImport Name="sp_MSrepl_startup" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Username">
+    <Key>
+      <PropertyRef Name="UsernameKey" />
+    </Key>
+    <Property Name="UsernameKey" Type="Int32" Nullable="false" />
+    <Property Name="Username1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UsernameInfo" Relationship="LocalBitcoinsDatabaseModel.FK_Username_UsernameInfo" FromRole="Username" ToRole="UsernameInfo" />
+    <NavigationProperty Name="UsernameTrades" Relationship="LocalBitcoinsDatabaseModel.FK_UsernameTrades_UsernameTrades" FromRole="Username" ToRole="UsernameTrade" />
+  </EntityType>
+  <EntityType Name="UsernameInfo">
+    <Key>
+      <PropertyRef Name="UsernameKey" />
+    </Key>
+    <Property Name="UsernameKey" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Verified" Type="Boolean" Nullable="false" />
+    <Property Name="Verification_date" Type="DateTime" Precision="3" />
+    <Property Name="Total_Bought" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Total_Sold" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Number_complete_trades" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Username" Relationship="LocalBitcoinsDatabaseModel.FK_Username_UsernameInfo" FromRole="UsernameInfo" ToRole="Username" />
+    <Property Name="AccountCreatedAt" Type="DateTime" Precision="3" />
+    <Property Name="RealName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UsernameTrade">
+    <Key>
+      <PropertyRef Name="Contact_number" />
+    </Key>
+    <Property Name="UsernameKey" Type="Int32" Nullable="false" />
+    <Property Name="Trade_amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Contact_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Email_used" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Trade_Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Username" Relationship="LocalBitcoinsDatabaseModel.FK_UsernameTrades_UsernameTrades" FromRole="UsernameTrade" ToRole="Username" />
+  </EntityType>
+  <Association Name="FK_Username_UsernameInfo">
+    <End Type="LocalBitcoinsDatabaseModel.UsernameInfo" Role="UsernameInfo" Multiplicity="1" />
+    <End Type="LocalBitcoinsDatabaseModel.Username" Role="Username" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UsernameInfo">
+        <PropertyRef Name="UsernameKey" />
+      </Principal>
+      <Dependent Role="Username">
+        <PropertyRef Name="UsernameKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsernameTrades_UsernameTrades">
+    <End Type="LocalBitcoinsDatabaseModel.Username" Role="Username" Multiplicity="1" />
+    <End Type="LocalBitcoinsDatabaseModel.UsernameTrade" Role="UsernameTrade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Username">
+        <PropertyRef Name="UsernameKey" />
+      </Principal>
+      <Dependent Role="UsernameTrade">
+        <PropertyRef Name="UsernameKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="spt_fallback_usg">
+    <Key>
+      <PropertyRef Name="xserver_name" />
+      <PropertyRef Name="xdttm_ins" />
+      <PropertyRef Name="xdttm_last_ins_upd" />
+      <PropertyRef Name="dbid" />
+      <PropertyRef Name="segmap" />
+      <PropertyRef Name="lstart" />
+      <PropertyRef Name="sizepg" />
+      <PropertyRef Name="vstart" />
+    </Key>
+    <Property Name="xserver_name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="xfallback_vstart" Type="Int32" />
+    <Property Name="dbid" Type="Int16" Nullable="false" />
+    <Property Name="segmap" Type="Int32" Nullable="false" />
+    <Property Name="lstart" Type="Int32" Nullable="false" />
+    <Property Name="sizepg" Type="Int32" Nullable="false" />
+    <Property Name="vstart" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="spt_monitor">
+    <Key>
+      <PropertyRef Name="lastrun" />
+      <PropertyRef Name="cpu_busy" />
+      <PropertyRef Name="io_busy" />
+      <PropertyRef Name="idle" />
+      <PropertyRef Name="pack_received" />
+      <PropertyRef Name="pack_sent" />
+      <PropertyRef Name="connections" />
+      <PropertyRef Name="pack_errors" />
+      <PropertyRef Name="total_read" />
+      <PropertyRef Name="total_write" />
+      <PropertyRef Name="total_errors" />
+    </Key>
+    <Property Name="lastrun" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cpu_busy" Type="Int32" Nullable="false" />
+    <Property Name="io_busy" Type="Int32" Nullable="false" />
+    <Property Name="idle" Type="Int32" Nullable="false" />
+    <Property Name="pack_received" Type="Int32" Nullable="false" />
+    <Property Name="pack_sent" Type="Int32" Nullable="false" />
+    <Property Name="connections" Type="Int32" Nullable="false" />
+    <Property Name="pack_errors" Type="Int32" Nullable="false" />
+    <Property Name="total_read" Type="Int32" Nullable="false" />
+    <Property Name="total_write" Type="Int32" Nullable="false" />
+    <Property Name="total_errors" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

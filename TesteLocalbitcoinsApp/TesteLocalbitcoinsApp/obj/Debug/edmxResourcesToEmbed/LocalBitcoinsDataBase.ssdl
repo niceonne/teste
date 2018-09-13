@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LocalBitcoinsDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Username">
+    <Key>
+      <PropertyRef Name="UsernameKey" />
+    </Key>
+    <Property Name="UsernameKey" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsernameInfo">
+    <Key>
+      <PropertyRef Name="UsernameKey" />
+    </Key>
+    <Property Name="UsernameKey" Type="int" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Verified" Type="bit" Nullable="false" />
+    <Property Name="Verification date" Type="datetime" />
+    <Property Name="Total Bought" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Total Sold" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Number complete trades" Type="int" Nullable="false" />
+    <Property Name="AccountCreatedAt" Type="datetime" />
+    <Property Name="RealName" Type="nvarchar(max)" />
+    <Property Name="FeedBackExists" Type="bit" />
+    <Property Name="myFeedBackMessage" Type="varchar(max)" />
+    <Property Name="feedbacktype" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UsernameTrades">
+    <Key>
+      <PropertyRef Name="Contact number" />
+    </Key>
+    <Property Name="UsernameKey" Type="int" Nullable="false" />
+    <Property Name="Trade amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Contact number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Email used" Type="varchar" MaxLength="50" />
+    <Property Name="Trade Type" Type="nchar" MaxLength="10" />
+    <Property Name="Currency" Type="varchar" MaxLength="50" />
+    <Property Name="CardUsed" Type="bit" />
+    <Property Name="4digitscard" Type="int" />
+  </EntityType>
+  <Association Name="FK_Username_UsernameInfo">
+    <End Role="UsernameInfo" Type="Self.UsernameInfo" Multiplicity="1" />
+    <End Role="Username" Type="Self.Username" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UsernameInfo">
+        <PropertyRef Name="UsernameKey" />
+      </Principal>
+      <Dependent Role="Username">
+        <PropertyRef Name="UsernameKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UsernameTrades_UsernameTrades">
+    <End Role="Username" Type="Self.Username" Multiplicity="1" />
+    <End Role="UsernameTrades" Type="Self.UsernameTrades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Username">
+        <PropertyRef Name="UsernameKey" />
+      </Principal>
+      <Dependent Role="UsernameTrades">
+        <PropertyRef Name="UsernameKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="LocalBitcoinsDatabaseModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Username" EntityType="Self.Username" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsernameInfo" EntityType="Self.UsernameInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsernameTrades" EntityType="Self.UsernameTrades" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Username_UsernameInfo" Association="Self.FK_Username_UsernameInfo">
+      <End Role="UsernameInfo" EntitySet="UsernameInfo" />
+      <End Role="Username" EntitySet="Username" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UsernameTrades_UsernameTrades" Association="Self.FK_UsernameTrades_UsernameTrades">
+      <End Role="Username" EntitySet="Username" />
+      <End Role="UsernameTrades" EntitySet="UsernameTrades" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
